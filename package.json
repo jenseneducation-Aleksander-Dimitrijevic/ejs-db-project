@@ -1,0 +1,20 @@
+{
+  "name": "post_it_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "sass:compile": "node-sass -o public/assets/scss/ styles.scss styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "node-sass": "^4.13.0",
+    "nodemon": "^2.0.2"
+  }
+}
