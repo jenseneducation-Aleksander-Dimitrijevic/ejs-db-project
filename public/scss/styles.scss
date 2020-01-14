@@ -4,16 +4,49 @@
   box-sizing: border-box;
 }
 
+button,
+i {
+  outline: none;
+}
+
 .wrapper {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-flow: column;
   align-items: center;
-  justify-content: center;
+
+  .navbar {
+    width: 100%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    background: rgb(1, 33, 54);
+    ul {
+      display: flex;
+      list-style: none;
+      margin-left: auto;
+      a {
+        color: #fff;
+        display: block;
+        font-size: 17px;
+        padding: 30px 20px;
+        transition: 0.3s;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+          background: lighten(rgb(1, 33, 54), 5%);
+        }
+      }
+    }
+  }
 
   .wrapper-content {
     width: 90%;
     max-width: 560px;
+    margin-top: auto;
+    margin-bottom: auto;
 
     header {
       form {
@@ -58,6 +91,18 @@
 
       .article-btns {
         display: flex;
+
+        i {
+          cursor: pointer;
+          font-size: 1.2rem;
+          margin: 0 0.5rem;
+          &.delete {
+            color: red;
+          }
+          &.edit-btn {
+            color: green;
+          }
+        }
       }
     }
 
@@ -66,18 +111,22 @@
         border: none;
         cursor: pointer;
         background-color: #fff;
+      }
+    }
+    .edit-form {
+      input {
+        padding: 12px 8px;
+      }
 
-        i {
-          font-size: 1.2rem;
-          margin: 0 0.5rem;
-          &.delete {
-            color: red;
-          }
-          &.edit {
-            color: green;
-          }
-        }
+      button {
+        color: #fff;
+        padding: 12px;
+        background: green;
       }
     }
   }
+}
+
+.hidden {
+  display: none;
 }
