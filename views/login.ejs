@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="/css/styles.min.css" />
     <title>Post It App</title>
   </head>
+
   <body>
     <div class="wrapper">
       <nav class="navbar">
-        <a href="/" class="site-logo">
+        <a href="#" class="site-logo">
           <h1>Post-IT</h1>
         </a>
         <ul>
@@ -20,18 +21,13 @@
       </nav>
       <div class="wrapper-content">
         <main>
-          <h3>Register</h3>
-          <form class="user-form" action="/register" method="post">
+          <h3>Log in</h3>
+          <form class="user-form" action="/auth" method="post">
             <input type="text" name="username" placeholder="Enter username" />
             <input
               type="password"
               name="password"
-              placeholder="Enter a password"
-            />
-            <input
-              type="password"
-              name="repeatPassword"
-              placeholder="Please repeat password"
+              placeholder="Enter password"
             />
             <input type="submit" value="Submit" />
           </form>

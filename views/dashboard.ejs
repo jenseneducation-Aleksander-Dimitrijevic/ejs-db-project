@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://kit.fontawesome.com/7700e0d7d8.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/styles.min.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="navbar">
+        <a href="/dashboard" class="site-logo">
+          <h1>Post-IT</h1>
+        </a>
+        <form action="/logout" method="post">
+          <button>Log out</button>
+        </form>
+      </nav>
+
+    <div class="wrapper-content">
+        <header>
+            <form action="/add" method="post">
+                <input type="text" name="post" placeholder="Enter post" />
+                <button>Add</button>
+            </form>
+        </header>
+        <main>
+            <% for(let post of data) { %>
+            <article class="notes">
+                <p class="article-content"><%= post.post %></p>
+                <form class="edit-form hidden" action="/edit/<%=post._id%>" method="post" />
+                <input type="text" name="post" value="<%=post.post%>" />
+                <button>Update</button>
+                </form>
+                <div class="article-btns">
+                    <i title="edit" class="fas fa-pencil-alt edit-btn"></i>
+                    <form action="/delete/<%= post._id %>" method="post">
+                        <button title="delete"><i class="fas fa-trash-alt delete"></i></button>
+                    </form>
+                </div>
+            </article>
+            <% } %>
+        </main>
+    </div>
+    </div>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
